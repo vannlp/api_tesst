@@ -17,6 +17,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('/agdsgj', function () use ($router) {
+    return "adjgjhasjg";
+});
 
 $router->group(['prefix' => 'api'], function () use ($router){
     $router->post('/login', 'AuthController@login');
@@ -27,7 +30,7 @@ $router->group(['prefix' => 'api'], function () use ($router){
 
 $router->group(['prefix' => 'posts', 'middleware' => 'auth'], function() use ($router){
     $router->post('/create', function() {
-        return response()->json("jadgjjakd", 200);
+        return $this->response()->json("jadgjjakd", 200);
     });
 });
 
